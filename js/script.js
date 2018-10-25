@@ -6,22 +6,24 @@ window.onload = init;
          listTask: [],
          add(task, priority = false) {
              let element = document.createElement("li");
+             let element1 = document.createElement("button");
+             let element2 = document.createElement("button");
              element.innerText = task;
-             /*element.addEventListener("click", () => {
+             element.appendChild(document.body.appendChild(element1));
+             element1.innerHTML='Realizada.';
+             element.appendChild(document.body.appendChild(element2));
+             element2.innerHTML='Eliminar.';
+             
+             element2.addEventListener("click", function(){
+                console.log(this);
                 let parent = element.parentNode;
                 if(parent){
                     parent.removeChild(element);
                 }
-             });*/
-             element.addEventListener("click", function(){
-                console.log(this);
-                let parent = this.parentNode;
-                if(parent){
-                    parent.removeChild(this);
-                }
              });
-            // Añadir un boton para marcar de finalizado
-            // Elmine de la lista
+             element1.addEventListener("click", function(){
+                /**TACHAR */
+             });
 
              if (priority) {
                  this.listTask.unshift({
