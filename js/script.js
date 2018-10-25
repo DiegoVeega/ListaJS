@@ -8,12 +8,13 @@ window.onload = init;
              let element = document.createElement("li");
              let element1 = document.createElement("button");
              let element2 = document.createElement("button");
-             element.innerText = task;
+             let texto= task;
+             element.innerText = texto;
              element.appendChild(document.body.appendChild(element1));
              element1.innerHTML='Realizada.';
              element.appendChild(document.body.appendChild(element2));
              element2.innerHTML='Eliminar.';
-             
+             /**Boton para eliminar tarea de la lista */
              element2.addEventListener("click", function(){
                 console.log(this);
                 let parent = element.parentNode;
@@ -21,8 +22,9 @@ window.onload = init;
                     parent.removeChild(element);
                 }
              });
+             /**Boton para marcar tarea como realizada (Trachar) */
              element1.addEventListener("click", function(){
-                /**TACHAR */
+                element.innerHTML=texto.strike();
              });
 
              if (priority) {
